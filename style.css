@@ -1,0 +1,1053 @@
+@font-face {
+    font-family: 'Gilroy';
+    src: url('./fonts/Gilroy-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gilroy';
+    src: url('./fonts/Gilroy-BlackItalic.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Gilroy';
+    src: url('./fonts/Gilroy-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gilroy';
+    src: url('./fonts/Gilroy-BoldItalic.ttf') format('truetype');
+    font-weight: 700;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Gilroy';
+    src: url('./fonts/Gilroy-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gilroy';
+    src: url('./fonts/Gilroy-ExtraBoldItalic.ttf') format('truetype');
+    font-weight: 800;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Gilroy';
+    src: url('./fonts/Gilroy-Heavy.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gilroy';
+    src: url('./fonts/Gilroy-HeavyItalic.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Gilroy';
+    src: url('./fonts/Gilroy-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gilroy';
+    src: url('./fonts/Gilroy-LightItalic.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Gilroy';
+    src: url('./fonts/Gilroy-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gilroy';
+    src: url('./fonts/Gilroy-MediumItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Gilroy';
+    src: url('./fonts/Gilroy-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gilroy';
+    src: url('./fonts/Gilroy-RegularItalic.ttf') format('truetype');
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Gilroy';
+    src: url('./fonts/Gilroy-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gilroy';
+    src: url('./fonts/Gilroy-SemiBoldItalic.ttf') format('truetype');
+    font-weight: 600;
+    font-style: italic;
+}
+
+html, body {
+    /* width: 100%; */
+    overflow-x: hidden;
+    font-family: 'Gilroy', sans-serif;
+    scroll-behavior: smooth;
+    /* margin-right: 15px; */
+}
+
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    z-index: 1000;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2 ease-in-out;
+}
+
+.navbar.shadow {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.options ul a,
+.options ul li img {
+    transition: transform 0.2s ease-in-out; /* Ensure transition is applied to all states */
+}
+
+.navbar.zoom-out .options ul a{
+    transform: scale(0.95); /* Scale down to 95% */
+    transition: transform 0.2s ease-in-out;
+}
+
+.navbar.zoom-out .options ul li img{
+    transform: scale(0.90); /* Scale down to 95% */
+    transition: transform 0.2s ease-in-out; 
+}
+
+.options ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+    font-family: 'Gilroy', sans-serif; 
+    font-weight: 500;
+    font-size: large;
+}
+
+.options img {
+    height: 110px;
+    width: 120px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.options img:hover {
+    animation: wobble 1s ease-in-out;
+}
+
+@keyframes wobble {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+    15% {
+        transform: rotate(-8deg);
+    }
+    30% {
+        transform: rotate(8deg);
+    }
+    45% {
+        transform: rotate(-8deg);
+    }
+    60% {
+        transform: rotate(8deg);
+    }
+    75% {
+        transform: rotate(-8deg);
+    }
+    90% {
+        transform: rotate(8deg);
+    }
+}
+
+.options button {
+    align-items: right;
+    height: 38px;
+    width: 123px;
+    border-radius: 10px;
+    margin-right: 10px;
+    --primary-color: #FCCB1D;
+    --secondary-color: #fff;
+    --hover-color: #111;
+    --arrow-width: 10px;
+    --arrow-stroke: 2px;
+    box-sizing: border-box;
+    border: 0;
+    color: black; /* Set initial font color to black */
+    padding: 1em 1.8em;
+    background: var(--primary-color);
+    display: flex;
+    transition: 0.2s background, 0.2s color; /* Add transition for color */
+    align-items: center;
+    gap: 0.6em;
+    font-weight: 600;
+    font-family: 'Gilroy', sans-serif; /* Apply Gilroy font to the button */
+}
+
+.options button:hover {
+    background-color: var(--hover-color);
+    color: #fff; /* Change font color to white on hover */
+    cursor: pointer;
+}
+
+.options button .arrow-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.options button .arrow {
+    margin-top: 1px;
+    width: var(--arrow-width);
+    background: var(--primary-color);
+    height: var(--arrow-stroke);
+    position: relative;
+    transition: 0.2s;
+}
+
+.options button .arrow::before {
+    content: "";
+    box-sizing: border-box;
+    position: absolute;
+    border: solid #111;
+    border-width: 0 var(--arrow-stroke) var(--arrow-stroke) 0;
+    display: inline-block;
+    top: -3px;
+    right: 3px;
+    transition: 0.3s;
+    padding: 3px;
+    transform: rotate(-45deg);
+}
+
+.options button:hover .arrow {
+    background: var(--secondary-color);
+}
+
+.options button:hover .arrow::before {
+    border-color: #fff; /* Change arrow color to white on hover */
+    right: 0;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    color: #FCCB1D;
+    cursor: pointer;
+}
+
+.first{
+    display: flex;
+    flex-direction: row;
+}
+.left{
+    margin-top: 100px;
+    flex: 70%;
+    margin-left: 40px;
+}
+
+.right{
+    flex:30%;
+    margin-top: 175px;
+
+}
+.right img{
+    height: 330px;
+    width: 570px;
+}
+#first-head{
+    font-size: 60px;
+    margin-bottom: 35px;
+}
+#first-head span{
+    font-weight: 700;
+}
+
+#first-desc{
+    font-size: 22px;
+    line-height: 35px;
+    margin-top: 0;
+}
+
+.price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 20px;
+}
+
+
+.left button {
+    margin-top: 0px;
+    align-items: right;
+    height: 38px;
+    width: 135px;
+    border-radius: 10px;
+    margin-right: 10px;
+    --primary-color: #FCCB1D;
+    --secondary-color: #fff;
+    --hover-color: #111;
+    --arrow-width: 10px;
+    --arrow-stroke: 2px;
+    box-sizing: border-box;
+    border: 0;
+    color: black; /* Set initial font color to black */
+    padding: 1em 1.8em;
+    background: var(--primary-color);
+    display: flex;
+    transition: 0.2s background, 0.2s color; /* Add transition for color */
+    align-items: center;
+    gap: 0.6em;
+    font-weight: 600;
+    font-family: 'Gilroy', sans-serif; /* Apply Gilroy font to the button */
+}
+
+button:hover {
+    background-color: var(--hover-color);
+    color: #fff; /* Change font color to white on hover */
+    cursor: pointer;
+}
+
+button .arrow-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button .arrow {
+    margin-top: 1px;
+    width: var(--arrow-width);
+    background: var(--primary-color);
+    height: var(--arrow-stroke);
+    position: relative;
+    transition: 0.2s;
+}
+
+button .arrow::before {
+    content: "";
+    box-sizing: border-box;
+    position: absolute;
+    border: solid #111;
+    border-width: 0 var(--arrow-stroke) var(--arrow-stroke) 0;
+    display: inline-block;
+    top: -3px;
+    right: 3px;
+    transition: 0.3s;
+    padding: 3px;
+    transform: rotate(-45deg);
+}
+
+button:hover .arrow {
+    background: var(--secondary-color);
+}
+
+button:hover .arrow::before {
+    border-color: #fff; /* Change arrow color to white on hover */
+    right: 0;
+}
+
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(80px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* animate*/
+#first-head,
+#first-desc,
+.first button,
+.right img,
+#second-head,
+#second-desc,
+#fourth-desc,
+.left-2 img,
+.second button,
+.third span,
+.third p,
+.third img,
+#fourth-head,
+.horizontal-text__title {
+    opacity: 0;
+    transform: translateY(60px); /* Initial position for the fadeInUp animation */
+}
+
+.right,
+.left-2, 
+.left-4{
+    transform: translateX(80px); /* Initial position for the fadeInLeft animation */
+}
+
+/* Animation classes */
+#first-head.animate,
+#first-desc.animate,
+.first button.animate,
+.right.animate img,
+#second-head.animate,
+#second-desc.animate,
+#fourth-desc.animate,
+.left-2.animate img,
+.second button.animate,
+.third span.animate,
+.third p.animate,
+.third img.animate,
+#fourth-head.animate,
+.horizontal-text__title.animate  {
+    opacity: 1;
+    transform: translateY(0); /* Reset position for the fadeInUp animation */
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+.right.animate,
+.left-2.animate,
+.left-4.animate
+{
+    transform: translateX(0); /* Reset position for the fadeInLeft animation */
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+
+
+
+/* Ensure that all elements in the first section animate together */
+.first .animate {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+/* animate */
+
+
+.first button {
+    animation: fadeInUp  ease-in-out ; /* delay the start of the animation by 1s */
+}
+
+.right{
+    animation: fadeInLeft  ease-in-out;
+}
+
+.second{
+    margin-top: 75px;
+    display: flex;
+    flex-direction: row;
+    gap: 75px;
+}
+
+.left-2{
+    flex: 35%;
+    justify-content: space-evenly;
+    text-align: right;
+}
+.left-2 img{
+    height: 420px
+}
+
+.right-2{
+    flex: 50%;
+}
+
+#second-head{
+    font-size: 60px;
+    margin-bottom: 40px;
+}
+#second-head span{
+    font-weight: 700;
+}
+
+#second-desc{
+    font-size: x-large;
+    line-height: 35px;
+    margin-top: 0;
+}
+
+.third {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.pro, .student, .startup {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    flex: 0 0 100vw; 
+    align-items: center;
+}
+
+.pro img, .student img, .startup img {
+    height: 100px;
+    width: auto;
+    max-width: 50%;
+}
+
+.third span {
+    font-weight: 700;
+    font-size: 35px;
+}
+
+.third p {
+    font-size: 18px;
+}
+
+.top{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 80px;
+    align-items: center;
+}
+
+.top img{
+    height: 170px;
+    width: 180px;
+}
+
+.right-4{
+    text-align: left;
+}
+
+#grid-img{
+    width: 30%;
+    height: 30%;
+}
+
+#fourth-head{
+    font-size: 60px;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+#fourth-head span{
+    font-weight: 700;
+}
+
+.fourth .bottom {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px; /* Adjust the gap as needed */
+    padding: 40px;
+}
+
+#fourth-desc{
+    font-size: x-large;
+    line-height: 35px;
+    margin-top: 0;
+}
+
+.grid-item {
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1.5px solid #000000; 
+    border-radius: 15px;
+    transition: transform 0.2s ease;
+    text-align: center;
+}
+
+.grid-item:hover{
+    transform: scale(1.05);
+    border: 2px solid #000000;
+    background-color: #fccc1d22;
+    cursor: default;
+    /* box-shadow: inset 0 0 0 2px #ffffff; */
+}
+
+#grid-head{
+    font-size: x-large;
+    font-weight: 700;
+
+}
+
+#grid-desc{
+    font-size: large;
+    line-height: 30px;
+}
+
+.bottom img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover the entire container without stretching */
+    object-position: center; /* Center the image */
+    transition: transform 0.3s ease-in-out;
+}
+
+.bottom img:hover{
+    transform: scale(1.05);
+}
+
+/* Ensure the section occupies full viewport height */
+section {
+    min-height: 100vh;
+}
+
+.horizontal-scroll {
+    background: #ffffff;
+    overflow: hidden;
+}
+
+.horizontal-scroll__inner {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: max-content; /* Set to max content to avoid extra space */
+}
+
+.horizontal-text {
+    color: rgb(0, 0, 0);
+    width: 100vw; /* Full viewport width */
+    margin-top: 60px;
+    padding: 50px;
+    display: flex;
+    flex-direction: row; /* Arrange items side by side */
+    flex-shrink: 0;
+    text-align: left;
+}
+
+.horizontal-text img {
+    margin-top: 60px;
+    max-width: 400px;
+    height: 300px;
+    margin-right: 20px; /* Space between image and text */
+}
+
+.horizontal-text__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 45px;
+}
+
+.horizontal-text__title {
+    margin-left: 35px;
+    font-size: 60px;
+}
+
+.horizontal-text__title span {
+    font-weight: 700;
+}
+
+.horizontal-text__title::after {
+    content: "";
+    height: 4px;
+    width: 100px;
+    display: block;
+    background: white;
+    position: relative;
+    bottom: -3rem;
+}
+
+.horizontal-scroll {
+    display: block;
+}
+
+.third {
+    display: none;
+}
+
+.textWrapper {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.sideText {
+    float: right;
+    width: 50%;
+    margin-right: 50px;
+    padding-top: 15%;
+}
+
+.sizing img {
+    /* Reduce the height of the images */
+    height: 70vh; /* Adjust this value to your preference */
+
+}
+.sizing {
+    z-index: -1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: all 0.5s ease;
+    opacity: 0;
+    transform: translateX(-100px);
+}
+
+.sizing.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+#img-scroll, #img-scroll2, #img-scroll3, #img-scroll4 img{
+    margin-top: 140px;
+    margin-left: 150px;
+}
+
+.sizing.visible {
+    opacity: 1;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.sizing.fade-out {
+    opacity: 0;
+}
+
+.sideText p{
+    font-size: 60px;
+}
+
+.sideText span{
+    font-weight: 700;
+}
+
+.space{
+    height: 170px;
+}
+
+#scroll-desc{
+    font-size: x-large;
+    line-height: 35px;
+    margin-top: 0;
+}
+
+
+@media screen and (max-width: 1100px) {
+    #first-head, 
+    #second-head, 
+    .horizontal-text__title, 
+    #fourth-head,
+    #scrolltxt {
+        font-size: 45px; /* Adjust font size as needed */
+    }
+
+    #first-desc,
+    #second-desc,
+    #fourth-desc,
+    #grid-desc,
+    #scroll-desc{
+        font-size: 18px;
+    }
+
+    #fourth-head{
+        text-align: center;
+    }
+
+    #img-scroll, #img-scroll2, #img-scroll3, #img-scroll4 img{
+        margin-left: 50px;
+    }
+}
+
+@media screen and (max-width: 945px){
+    .right img{
+        height: 210px;
+        width: 345px;
+    }
+
+    .fourth .bottom {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px; /* Adjust the gap as needed */
+        padding: 40px;
+    }
+
+}
+
+@media screen and (max-width: 768px){
+    #first-head, 
+    #second-head, 
+    .horizontal-text__title, 
+    #fourth-head {
+        font-size:38.5px; /* Adjust font size as needed */
+    }
+    
+    #second-desc,
+    #fourth-desc,
+    #grid-desc,
+    #scroll-desc{
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .horizontal-text {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center;
+    }
+
+    .horizontal-text img {
+        width: 40%;
+        height: 30%;
+        margin-top: 0;
+        padding-top: 0;
+        margin-right: 0;
+        margin-bottom: 20px; /* Add space between image and text */
+    }
+
+    .horizontal-text__title {
+        font-size: 45px;
+        text-align: center;
+    }
+
+    .horizontal-text.pro, .horizontal-text.student, .horizontal-text.startup {
+        padding-top: 0px;
+    }
+
+    #scrolltxt {
+        text-align: center;
+    }
+
+
+}
+
+@media screen and (max-width: 700px){
+    .first{
+        display: flex;
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    #first-head, 
+    #second-head, 
+    .horizontal-text__title, 
+    #fourth-head,
+    #scrolltxt {
+        font-size: 35px; /* Adjust font size as needed */
+    }
+
+
+    .price{
+        text-align: center;
+    }
+
+    .left {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 0;
+        margin-left: 0;
+    }
+    
+
+    .right img{
+        height: 180px;
+        width: 300px;
+        margin-right: 0;
+    }
+
+
+    .left-2 img{
+        height: 210px;
+
+    }
+
+    #second-head{
+        text-align: center;
+    }
+
+    .right{
+        margin-top: 120px;
+    }
+
+    #img-scroll, #img-scroll2, #img-scroll3, #img-scroll4 img{
+        margin-left: 10px;
+    }
+
+    .sizing img {
+        height: 60vh; 
+    
+    }
+
+
+}
+
+@media screen and (max-width: 550px){
+    .fourth .bottom {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px; /* Adjust the gap as needed */
+        padding: 10px;
+    }
+
+    #grid-desc{
+        font-size: 12px;
+        line-height: 20px;
+    }
+
+    .second{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align:justify;
+    }
+
+    #second-head{
+        margin-top: 0;
+    }
+
+    .left-2 img{
+        height: 150px;
+
+    }
+
+    .options ul a li {
+        font-size: 15px;
+    }
+
+    .options img {
+        height: 70px;
+        width: 85px;
+    }
+
+    .options button {
+        align-items: right;
+        height: 32px;
+        width: 112px;
+        font-size: 12px;
+    }
+
+    .first button{
+        margin-top: 20px;
+    }
+
+    .sizing img {
+        height: 55vh; 
+    
+    }
+
+    #scroll-desc{
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 500px){
+    .sizing img {
+        height: 45vh; 
+    
+    }
+
+    #scrolltxt{
+        font-size: 30px;
+    }
+
+}
+
+@media screen and (max-width: 440px){
+    #fourth-head{
+        font-size: 20px;
+    }
+
+    #fourth-desc{
+        font-size: 10px;
+        line-height: 20px;
+    }
+
+        .options ul a li {
+        font-size: 10px;
+    }
+
+    .options li a button{
+        font-size: 9px;
+    }
+
+    .options button{
+        width: 86px;
+    }
+
+    .sizing img {
+        height: 35vh; 
+    
+    }
+
+    #scrolltxt{
+        font-size: 25px;
+    }
+
+    #scroll-desc{
+        line-height: 25px;
+    }
+}
+
+@media screen and (max-width: 440px){
+        .fourth .bottom {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        }
+
+        #grid-head{
+            font-size: 18px;
+        }
+
+        #grid-desc{
+            font-size: 8px;
+        }
+
+        .left-4 img{
+            width: 110px;
+            height: 110px;
+        }
+
+        .grid-item{
+            padding: 5px;
+        }
+
+        .horizontal-scroll {
+            display: none;
+        }
+    
+        .third {
+            display: block;
+        }
+
+}
